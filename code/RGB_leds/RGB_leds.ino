@@ -31,7 +31,7 @@ void setup() {
 void loop() {
   for(i=0;i<5;i++){
       if(kleur[i]<250){
-        kleur[i] = kleur[i]+5;
+        kleur[i] = kleur[i]+1;
         leds[i] = CHSV( kleur[i], 187, 255);
         FastLED.show();
         delay(10);
