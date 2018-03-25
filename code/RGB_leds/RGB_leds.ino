@@ -12,6 +12,7 @@
 CRGB leds[NUM_LEDS];
 
 int kleur[5];
+int i=0;
 
 void setup() {
   FastLED.addLeds<WS2812, DATA_PIN, RGB>(leds, NUM_LEDS);
@@ -28,18 +29,20 @@ void setup() {
 }
 
 void loop() {
-  for(int i=0;i<9;i++){
+  for(i=0;i<5;i++){
       if(kleur[i]<250){
         kleur[i] = kleur[i]+5;
         leds[i] = CHSV( kleur[i], 187, 255);
+        FastLED.show();
+        delay(10);
       }
       else{
         kleur[i]=0;
         leds[i] = CHSV( kleur[i], 187, 255);
+        FastLED.show();
+        delay(10);
       }
     }
-    FastLED.show();
-    delay(20);
 }
 
 
